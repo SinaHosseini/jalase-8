@@ -28,8 +28,14 @@ def translate_en_to_fa():
             if user_word == word["en"]:
                 print(word["fa"], end=" ")
                 translated.append(word["fa"])
+                break
         else:
             print(user_word, end=" ")
+
+    output = str(translated)
+    voice = gtts.gTTS(output, lang="ar", slow=False)
+    voice.save("episode8/voice.mp3")
+
     print()
 
 
@@ -45,8 +51,14 @@ def translate_fa_to_en():
             if user_word == word["fa"]:
                 print(word["en"], end=" ")
                 translated.append(word["en"])
+                break
         else:
             print(user_word, end=" ")
+
+    output = str(translated)
+    voice = gtts.gTTS(output, lang="en", slow=False)
+    voice.save("episode8/voice.mp3")
+
     print()
 
 
